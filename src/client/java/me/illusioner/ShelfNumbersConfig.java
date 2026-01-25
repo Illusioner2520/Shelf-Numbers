@@ -8,5 +8,10 @@ public class ShelfNumbersConfig {
     public static boolean displayWithoutItems = false;
     public static boolean displayWithSingleItem = true;
     public static boolean displayOnTop = false;
+    public static boolean bold = false;
+    public static boolean italics = false;
+    public static boolean underline = false;
+    public static boolean strikethrough = false;
+    public static boolean obfuscated = false;
     public ShelfNumbersConfig() {}
 }

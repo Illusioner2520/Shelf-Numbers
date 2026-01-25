@@ -50,6 +50,26 @@ public class ShelfNumbersModMenu implements ModMenuApi {
                 .setDefaultValue(false)
                 .setSaveConsumer(newValue -> ShelfNumbersConfig.displayOnTop = newValue)
                 .build());
+            general.addEntry(entryBuilder.startBooleanToggle(Component.translatable("me.illusioner.shelf_numbers.config.bold"), ShelfNumbersConfig.bold)
+                .setDefaultValue(false)
+                .setSaveConsumer(newValue -> ShelfNumbersConfig.bold = newValue)
+                .build());
+            general.addEntry(entryBuilder.startBooleanToggle(Component.translatable("me.illusioner.shelf_numbers.config.italics"), ShelfNumbersConfig.italics)
+                .setDefaultValue(false)
+                .setSaveConsumer(newValue -> ShelfNumbersConfig.italics = newValue)
+                .build());
+            general.addEntry(entryBuilder.startBooleanToggle(Component.translatable("me.illusioner.shelf_numbers.config.underline"), ShelfNumbersConfig.underline)
+                .setDefaultValue(false)
+                .setSaveConsumer(newValue -> ShelfNumbersConfig.underline = newValue)
+                .build());
+            general.addEntry(entryBuilder.startBooleanToggle(Component.translatable("me.illusioner.shelf_numbers.config.strikethrough"), ShelfNumbersConfig.strikethrough)
+                .setDefaultValue(false)
+                .setSaveConsumer(newValue -> ShelfNumbersConfig.strikethrough = newValue)
+                .build());
+            general.addEntry(entryBuilder.startBooleanToggle(Component.translatable("me.illusioner.shelf_numbers.config.obfuscated"), ShelfNumbersConfig.obfuscated)
+                .setDefaultValue(false)
+                .setSaveConsumer(newValue -> ShelfNumbersConfig.obfuscated = newValue)
+                .build());
             builder.setSavingRunnable(() -> {
                 GsonBuilder gsonBuilder  = new GsonBuilder();
                 gsonBuilder.excludeFieldsWithModifiers(java.lang.reflect.Modifier.TRANSIENT);

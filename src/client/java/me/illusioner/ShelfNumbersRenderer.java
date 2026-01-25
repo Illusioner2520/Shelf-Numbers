@@ -40,7 +40,7 @@ public class ShelfNumbersRenderer extends ShelfRenderer {
         super.submit(shelfRenderState, poseStack, submitNodeCollector, cameraRenderState);
         poseStack.pushPose();
         Direction direction = (Direction) shelfRenderState.blockState.getValue(ShelfBlock.FACING);
-        float shelfDir = direction.getAxis().isHorizontal() ? -direction.toYRot() : 180.0F;
+        float shelfDir = -direction.toYRot();
         NonNullList<ItemStack> items = ((ShelfRenderStateAccessor) shelfRenderState).getBlockEntity().getItems();
         for (int i = 0; i < shelfRenderState.items.length; i++) {
             this.submitItemNumber(shelfRenderState, poseStack, submitNodeCollector, cameraRenderState, i, shelfDir, items.get(i).getCount());
@@ -59,7 +59,7 @@ public class ShelfNumbersRenderer extends ShelfRenderer {
         String text = Integer.toString(count);
         if (count == 0 && !ShelfNumbersConfig.displayWithoutItems) text = "";
         if (count == 1 && !ShelfNumbersConfig.displayWithSingleItem) text = "";
-        Style style = Style.EMPTY;
+        Style style = Style.EMPTY.withBold(ShelfNumbersConfig.bold).withItalic(ShelfNumbersConfig.italics).withUnderlined(ShelfNumbersConfig.underline).withStrikethrough(ShelfNumbersConfig.strikethrough).withObfuscated(ShelfNumbersConfig.obfuscated);
         FormattedCharSequence formattedCharSequence = FormattedCharSequence.forward(text, style);
         float width = (float) (-this.font.width(text) / 2);
         float height = (float) (-this.font.lineHeight / 2);
