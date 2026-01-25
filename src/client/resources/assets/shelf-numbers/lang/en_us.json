@@ -1,0 +1,11 @@
+{
+    "me.illusioner.shelf_numbers.config": "Shelf Numbers",
+    "me.illusioner.shelf_numbers.config.general": "General",
+    "me.illusioner.shelf_numbers.config.text_color": "Text Color",
+    "me.illusioner.shelf_numbers.config.outline_color": "Outline Color",
+    "me.illusioner.shelf_numbers.config.show_shadow": "Show Shadow",
+    "me.illusioner.shelf_numbers.config.font_size": "Font Size",
+    "me.illusioner.shelf_numbers.config.display_without_items": "Display Without Items",
+    "me.illusioner.shelf_numbers.config.display_with_single_item": "Display With Single Item",
+    "me.illusioner.shelf_numbers.config.display_on_top": "Display on Top"
+}

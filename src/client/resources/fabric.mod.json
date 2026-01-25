@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "shelf-numbers",
+	"version": "0.0.1",
+	"name": "Shelf Numbers",
+	"description": "Displays the number of items on shelves",
+	"authors": [
+		"Illusioner2520"
+	],
+	"contact": {},
+	"license": "MIT",
+	"icon": "assets/shelf-numbers/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"me.illusioner.ShelfNumbersClient"
+		],
+		"modmenu": [
+			"me.illusioner.ShelfNumbersModMenu"
+		]
+	},
+	"mixins": [
+		{
+			"config": "shelf-numbers.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.0",
+		"minecraft": ">=1.21.10",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"modmenu": "*",
+		"cloth-config": "*"
+	}
+}
