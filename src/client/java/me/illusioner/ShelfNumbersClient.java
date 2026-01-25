@@ -1,6 +1,7 @@
 package me.illusioner;
 
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 import org.slf4j.Logger;
@@ -27,7 +28,13 @@ public class ShelfNumbersClient implements ClientModInitializer {
 		try (FileReader reader = new FileReader("config/shelf_numbers.json")) {
             gson.fromJson(reader, ShelfNumbersConfig.class);
         } catch (IOException e) {
-            e.printStackTrace();
+            gsonBuilder.setPrettyPrinting();
+            Gson gson2 = gsonBuilder.create();
+            try (FileWriter writer = new FileWriter("config/shelf_numbers.json")) {
+                gson2.toJson(new ShelfNumbersConfig(), writer);
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
         }
 	}
 }
