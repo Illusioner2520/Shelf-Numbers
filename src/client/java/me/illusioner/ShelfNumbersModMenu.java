@@ -46,6 +46,10 @@ public class ShelfNumbersModMenu implements ModMenuApi {
                 .setDefaultValue(true)
                 .setSaveConsumer(newValue -> ShelfNumbersConfig.displayWithSingleItem = newValue)
                 .build());
+            general.addEntry(entryBuilder.startBooleanToggle(Component.translatable("me.illusioner.shelf_numbers.config.display_with_full_stack"), ShelfNumbersConfig.displayWithFullStack)
+                .setDefaultValue(true)
+                .setSaveConsumer(newValue -> ShelfNumbersConfig.displayWithFullStack = newValue)
+                .build());
             general.addEntry(entryBuilder.startBooleanToggle(Component.translatable("me.illusioner.shelf_numbers.config.display_on_top"), ShelfNumbersConfig.displayOnTop)
                 .setDefaultValue(false)
                 .setSaveConsumer(newValue -> ShelfNumbersConfig.displayOnTop = newValue)

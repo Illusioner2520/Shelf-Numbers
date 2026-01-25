@@ -7,6 +7,7 @@ public class ShelfNumbersConfig {
     public static int fontSize = 30;
     public static boolean displayWithoutItems = false;
     public static boolean displayWithSingleItem = true;
+    public static boolean displayWithFullStack = true;
     public static boolean displayOnTop = false;
     public static boolean bold = false;
     public static boolean italics = false;

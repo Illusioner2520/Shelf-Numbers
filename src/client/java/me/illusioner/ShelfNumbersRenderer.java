@@ -43,12 +43,12 @@ public class ShelfNumbersRenderer extends ShelfRenderer {
         float shelfDir = -direction.toYRot();
         NonNullList<ItemStack> items = ((ShelfRenderStateAccessor) shelfRenderState).getBlockEntity().getItems();
         for (int i = 0; i < shelfRenderState.items.length; i++) {
-            this.submitItemNumber(shelfRenderState, poseStack, submitNodeCollector, cameraRenderState, i, shelfDir, items.get(i).getCount());
+            this.submitItemNumber(shelfRenderState, poseStack, submitNodeCollector, cameraRenderState, i, shelfDir, items.get(i).getCount(), items.get(i).getMaxStackSize());
         }
         poseStack.popPose();
     }
 
-    public void submitItemNumber(ShelfRenderState shelfRenderState, PoseStack poseStack, SubmitNodeCollector submitNodeCollector, CameraRenderState cameraRenderState, int index, float shelfDir, int count) {
+    public void submitItemNumber(ShelfRenderState shelfRenderState, PoseStack poseStack, SubmitNodeCollector submitNodeCollector, CameraRenderState cameraRenderState, int index, float shelfDir, int count, int maxStackSize) {
         poseStack.pushPose();
         float x = (float) (index - 1) * 0.3125F;
         poseStack.translate(0.5F, 0.5F, 0.5F);
@@ -59,6 +59,7 @@ public class ShelfNumbersRenderer extends ShelfRenderer {
         String text = Integer.toString(count);
         if (count == 0 && !ShelfNumbersConfig.displayWithoutItems) text = "";
         if (count == 1 && !ShelfNumbersConfig.displayWithSingleItem) text = "";
+        if (count == maxStackSize && !ShelfNumbersConfig.displayWithFullStack) text = "";
         Style style = Style.EMPTY.withBold(ShelfNumbersConfig.bold).withItalic(ShelfNumbersConfig.italics).withUnderlined(ShelfNumbersConfig.underline).withStrikethrough(ShelfNumbersConfig.strikethrough).withObfuscated(ShelfNumbersConfig.obfuscated);
         FormattedCharSequence formattedCharSequence = FormattedCharSequence.forward(text, style);
         float width = (float) (-this.font.width(text) / 2);
