@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "shelf-numbers",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"name": "Shelf Numbers",
 	"description": "Displays the number of items on shelves",
 	"authors": [
