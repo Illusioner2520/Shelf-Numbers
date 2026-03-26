@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
-	"id": "shelf-numbers",
-	"version": "0.0.3",
+	"id": "shelf_numbers",
+	"version": "0.0.4",
 	"name": "Shelf Numbers",
 	"description": "Displays the number of items on shelves",
 	"authors": [
@@ -9,7 +9,7 @@
 	],
 	"contact": {},
 	"license": "MIT",
-	"icon": "assets/shelf-numbers/icon.png",
+	"icon": "assets/shelf_numbers/icon.png",
 	"environment": "client",
 	"entrypoints": {
 		"client": [
@@ -21,14 +21,14 @@
 	},
 	"mixins": [
 		{
-			"config": "shelf-numbers.client.mixins.json",
+			"config": "shelf_numbers.client.mixins.json",
 			"environment": "client"
 		}
 	],
 	"depends": {
 		"fabricloader": ">=0.15.0",
-		"minecraft": ">=1.21.9",
-		"java": ">=21",
+		"minecraft": ">=26.1",
+		"java": ">=25",
 		"fabric-api": "*"
 	},
 	"suggests": {

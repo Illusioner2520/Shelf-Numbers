@@ -19,59 +19,72 @@ public class ShelfNumbersModMenu implements ModMenuApi {
         return parent -> {
             ConfigBuilder builder = ConfigBuilder.create()
                 .setParentScreen(parent)
-                .setTitle(Component.translatable("me.illusioner.shelf_numbers.config"));
-            ConfigCategory general = builder.getOrCreateCategory(Component.translatable("me.illusioner.shelf_numbers.config.general"));
+                .setTitle(Component.translatable("shelf_numbers.config"));
+            ConfigCategory general = builder.getOrCreateCategory(Component.translatable("shelf_numbers.config.general"));
             ConfigEntryBuilder entryBuilder = builder.entryBuilder();
-            general.addEntry(entryBuilder.startAlphaColorField(Component.translatable("me.illusioner.shelf_numbers.config.text_color"), ShelfNumbersConfig.textColor)
+            general.addEntry(entryBuilder.startAlphaColorField(Component.translatable("shelf_numbers.config.text_color"), ShelfNumbersConfig.textColor)
                 .setDefaultValue(0xffffffff)
+                .setTooltip(Component.translatable("shelf_numbers.config.text_color.tooltip"))
                 .setSaveConsumer(newValue -> ShelfNumbersConfig.textColor = newValue)
                 .build());
-            general.addEntry(entryBuilder.startAlphaColorField(Component.translatable("me.illusioner.shelf_numbers.config.outline_color"), ShelfNumbersConfig.outlineColor)
+            general.addEntry(entryBuilder.startAlphaColorField(Component.translatable("shelf_numbers.config.outline_color"), ShelfNumbersConfig.outlineColor)
                 .setDefaultValue(0x00000000)
+                .setTooltip(Component.translatable("shelf_numbers.config.outline_color.tooltip"))
                 .setSaveConsumer(newValue -> ShelfNumbersConfig.outlineColor = newValue)
                 .build());
-            general.addEntry(entryBuilder.startBooleanToggle(Component.translatable("me.illusioner.shelf_numbers.config.show_shadow"), ShelfNumbersConfig.showShadow)
+            general.addEntry(entryBuilder.startBooleanToggle(Component.translatable("shelf_numbers.config.show_shadow"), ShelfNumbersConfig.showShadow)
                 .setDefaultValue(false)
+                .setTooltip(Component.translatable("shelf_numbers.config.show_shadow.tooltip"))
                 .setSaveConsumer(newValue -> ShelfNumbersConfig.showShadow = newValue)
                 .build());
-            general.addEntry(entryBuilder.startIntField(Component.translatable("me.illusioner.shelf_numbers.config.font_size"), ShelfNumbersConfig.fontSize)
+            general.addEntry(entryBuilder.startIntField(Component.translatable("shelf_numbers.config.font_size"), ShelfNumbersConfig.fontSize)
                 .setDefaultValue(30)
+                .setTooltip(Component.translatable("shelf_numbers.config.font_size.tooltip"))
                 .setSaveConsumer(newValue -> ShelfNumbersConfig.fontSize = newValue)
                 .build());
-            general.addEntry(entryBuilder.startBooleanToggle(Component.translatable("me.illusioner.shelf_numbers.config.display_without_items"), ShelfNumbersConfig.displayWithoutItems)
+            general.addEntry(entryBuilder.startBooleanToggle(Component.translatable("shelf_numbers.config.display_without_items"), ShelfNumbersConfig.displayWithoutItems)
                 .setDefaultValue(false)
+                .setTooltip(Component.translatable("shelf_numbers.config.display_without_items.tooltip"))
                 .setSaveConsumer(newValue -> ShelfNumbersConfig.displayWithoutItems = newValue)
                 .build());
-            general.addEntry(entryBuilder.startBooleanToggle(Component.translatable("me.illusioner.shelf_numbers.config.display_with_single_item"), ShelfNumbersConfig.displayWithSingleItem)
+            general.addEntry(entryBuilder.startBooleanToggle(Component.translatable("shelf_numbers.config.display_with_single_item"), ShelfNumbersConfig.displayWithSingleItem)
                 .setDefaultValue(true)
+                .setTooltip(Component.translatable("shelf_numbers.config.display_with_single_item.tooltip"))
                 .setSaveConsumer(newValue -> ShelfNumbersConfig.displayWithSingleItem = newValue)
                 .build());
-            general.addEntry(entryBuilder.startBooleanToggle(Component.translatable("me.illusioner.shelf_numbers.config.display_with_full_stack"), ShelfNumbersConfig.displayWithFullStack)
+            general.addEntry(entryBuilder.startBooleanToggle(Component.translatable("shelf_numbers.config.display_with_full_stack"), ShelfNumbersConfig.displayWithFullStack)
                 .setDefaultValue(true)
+                .setTooltip(Component.translatable("shelf_numbers.config.display_with_full_stack.tooltip"))
                 .setSaveConsumer(newValue -> ShelfNumbersConfig.displayWithFullStack = newValue)
                 .build());
-            general.addEntry(entryBuilder.startBooleanToggle(Component.translatable("me.illusioner.shelf_numbers.config.display_on_top"), ShelfNumbersConfig.displayOnTop)
+            general.addEntry(entryBuilder.startBooleanToggle(Component.translatable("shelf_numbers.config.display_on_top"), ShelfNumbersConfig.displayOnTop)
                 .setDefaultValue(false)
+                .setTooltip(Component.translatable("shelf_numbers.config.display_on_top.tooltip"))
                 .setSaveConsumer(newValue -> ShelfNumbersConfig.displayOnTop = newValue)
                 .build());
-            general.addEntry(entryBuilder.startBooleanToggle(Component.translatable("me.illusioner.shelf_numbers.config.bold"), ShelfNumbersConfig.bold)
+            general.addEntry(entryBuilder.startBooleanToggle(Component.translatable("shelf_numbers.config.bold"), ShelfNumbersConfig.bold)
                 .setDefaultValue(false)
+                .setTooltip(Component.translatable("shelf_numbers.config.bold.tooltip"))
                 .setSaveConsumer(newValue -> ShelfNumbersConfig.bold = newValue)
                 .build());
-            general.addEntry(entryBuilder.startBooleanToggle(Component.translatable("me.illusioner.shelf_numbers.config.italics"), ShelfNumbersConfig.italics)
+            general.addEntry(entryBuilder.startBooleanToggle(Component.translatable("shelf_numbers.config.italics"), ShelfNumbersConfig.italics)
                 .setDefaultValue(false)
+                .setTooltip(Component.translatable("shelf_numbers.config.italics.tooltip"))
                 .setSaveConsumer(newValue -> ShelfNumbersConfig.italics = newValue)
                 .build());
-            general.addEntry(entryBuilder.startBooleanToggle(Component.translatable("me.illusioner.shelf_numbers.config.underline"), ShelfNumbersConfig.underline)
+            general.addEntry(entryBuilder.startBooleanToggle(Component.translatable("shelf_numbers.config.underline"), ShelfNumbersConfig.underline)
                 .setDefaultValue(false)
+                .setTooltip(Component.translatable("shelf_numbers.config.underline.tooltip"))
                 .setSaveConsumer(newValue -> ShelfNumbersConfig.underline = newValue)
                 .build());
-            general.addEntry(entryBuilder.startBooleanToggle(Component.translatable("me.illusioner.shelf_numbers.config.strikethrough"), ShelfNumbersConfig.strikethrough)
+            general.addEntry(entryBuilder.startBooleanToggle(Component.translatable("shelf_numbers.config.strikethrough"), ShelfNumbersConfig.strikethrough)
                 .setDefaultValue(false)
+                .setTooltip(Component.translatable("shelf_numbers.config.strikethrough.tooltip"))
                 .setSaveConsumer(newValue -> ShelfNumbersConfig.strikethrough = newValue)
                 .build());
-            general.addEntry(entryBuilder.startBooleanToggle(Component.translatable("me.illusioner.shelf_numbers.config.obfuscated"), ShelfNumbersConfig.obfuscated)
+            general.addEntry(entryBuilder.startBooleanToggle(Component.translatable("shelf_numbers.config.obfuscated"), ShelfNumbersConfig.obfuscated)
                 .setDefaultValue(false)
+                .setTooltip(Component.translatable("shelf_numbers.config.obfuscated.tooltip"))
                 .setSaveConsumer(newValue -> ShelfNumbersConfig.obfuscated = newValue)
                 .build());
             builder.setSavingRunnable(() -> {
