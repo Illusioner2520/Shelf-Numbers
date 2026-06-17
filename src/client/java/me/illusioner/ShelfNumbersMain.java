@@ -7,14 +7,15 @@ import java.io.IOException;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import net.fabricmc.api.ClientModInitializer;
+import me.illusioner.accessor.GameRendererAccessor;
+import me.illusioner.accessor.GuiRendererAccessor;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
-import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.entity.BlockEntityTypes;
 
-public class ShelfNumbersClient implements ClientModInitializer {
-	@Override
-	public void onInitializeClient() {
-		BlockEntityRenderers.register(BlockEntityType.SHELF, context -> {
+public class ShelfNumbersMain {
+    public static void initialize() {
+		BlockEntityRenderers.register(BlockEntityTypes.SHELF, context -> {
 			return new ShelfNumbersRenderer(context);
 		});
 		GsonBuilder gsonBuilder  = new GsonBuilder();
@@ -31,5 +32,9 @@ public class ShelfNumbersClient implements ClientModInitializer {
                 e1.printStackTrace();
             }
         }
-	}
+    }
+    public static void loaded() {
+        Minecraft minecraft = Minecraft.getInstance();
+        ((GuiRendererAccessor) (((GameRendererAccessor) (minecraft.gameRenderer)).getGuiRenderer())).addPictureInPictureRenderer(new GuiBlockEntityRenderer(minecraft.getBlockEntityRenderDispatcher(), minecraft.getModelManager()));
+    }
 }

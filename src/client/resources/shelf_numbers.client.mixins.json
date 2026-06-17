@@ -3,7 +3,9 @@
 	"package": "me.illusioner.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"client": [
-		"ShelfRenderStateMixin"
+		"ShelfRenderStateMixin",
+		"GuiRendererMixin",
+		"GameRendererMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

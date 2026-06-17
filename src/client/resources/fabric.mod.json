@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "shelf_numbers",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"name": "Shelf Numbers",
 	"description": "Displays the number of items on shelves",
 	"authors": [
@@ -13,7 +13,7 @@
 	"environment": "client",
 	"entrypoints": {
 		"client": [
-			"me.illusioner.ShelfNumbersClient"
+			"me.illusioner.ShelfNumbersFabric"
 		],
 		"modmenu": [
 			"me.illusioner.ShelfNumbersModMenu"

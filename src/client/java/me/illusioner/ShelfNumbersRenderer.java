@@ -3,6 +3,7 @@ package me.illusioner;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 
+import me.illusioner.accessor.ShelfRenderStateAccessor;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.Font.DisplayMode;
 import net.minecraft.client.renderer.SubmitNodeCollector;
