@@ -198,7 +198,7 @@ public class ShelfNumbersConfigScreen extends Screen {
 
         @Override
         protected void updateMessage() {
-            this.setMessage(Component.translatable("shelf_numbers.config.font_size").append(": " + (int) (100 * this.value)));
+            this.setMessage(Component.translatable("shelf_numbers.config.font_size", (int) (100 * this.value)));
         } 
     }
 }

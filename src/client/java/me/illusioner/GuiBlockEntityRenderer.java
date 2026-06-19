@@ -16,7 +16,6 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRenderDispatcher;
 import net.minecraft.client.renderer.state.level.CameraRenderState;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.resources.model.ModelManager;
-import net.minecraft.world.level.block.Blocks;
 
 public class GuiBlockEntityRenderer extends PictureInPictureRenderer<GuiBlockEntityRenderState> {
     private BlockEntityRenderDispatcher blockEntityRenderDispatcher;
@@ -57,7 +56,7 @@ public class GuiBlockEntityRenderer extends PictureInPictureRenderer<GuiBlockEnt
         }
         poseStack.pushPose();
         BlockModelRenderState blockModelRenderState = new BlockModelRenderState();
-        blockModelResolver.update(blockModelRenderState, Blocks.OAK_SHELF.defaultBlockState(), null);
+        blockModelResolver.update(blockModelRenderState, renderState.blockState(), null);
         blockModelRenderState.submit(poseStack, submitNodeCollector, renderState.renderState().lightCoords, OverlayTexture.NO_OVERLAY, 0);
         poseStack.popPose();
         poseStack.pushPose();

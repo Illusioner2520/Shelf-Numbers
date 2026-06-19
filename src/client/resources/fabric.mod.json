@@ -7,7 +7,11 @@
 	"authors": [
 		"Illusioner2520"
 	],
-	"contact": {},
+	"contact": {
+		"issues": "https://github.com/Illusioner2520/Shelf-Numbers/issues",
+		"sources": "https://github.com/Illusioner2520/Shelf-Numbers",
+		"homepage": "https://modrinth.com/mod/shelf-numbers"
+	},
 	"license": "MIT",
 	"icon": "assets/shelf_numbers/icon.png",
 	"environment": "client",
@@ -27,12 +31,11 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.15.0",
-		"minecraft": ">=26.1",
+		"minecraft": ">=26.2",
 		"java": ">=25",
 		"fabric-api": "*"
 	},
 	"suggests": {
-		"modmenu": "*",
-		"cloth-config": "*"
+		"modmenu": "*"
 	}
 }

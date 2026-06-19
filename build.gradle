@@ -1,13 +1,12 @@
 plugins {
-	id 'net.fabricmc.fabric-loom' version "${loom_version}"
-	id 'maven-publish'
+	alias libs.plugins.fabric.loom
 }
 
-version = project.mod_version
-group = project.maven_group
+version = libs.versions.shelf.numbers.get()
+group = "shelf_numbers"
 
 base {
-	archivesName = project.archives_base_name
+	archivesName = "shelf_numbers"
 }
 
 repositories {
@@ -27,16 +26,16 @@ loom {
 }
 
 dependencies {
-	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	minecraft libs.minecraft
+	implementation libs.fabric
 
-	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
-	implementation "com.terraformersmc:modmenu:${project.modmenu_version}"
+	implementation libs.fabric.api
+	implementation libs.modmenu
 	
 }
 
 processResources {
-	inputs.property "version", project.version
+	inputs.property "version", libs.versions.shelf.numbers.get()
 
 	filesMatching("fabric.mod.json") {
 		expand "version": inputs.properties.version
